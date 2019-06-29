@@ -3,9 +3,6 @@ import argparse
 verbose = False
 
 runewords = {
-"dummyDoppelt": ["Tir","Tir","Vex"],
-"dummyGross": ["tir","sol","eTh"],
-"dummyUmUmUm": ["um","um","um"],
 "Ancient's Pledge": ["Ral","Ort","Tal"],
 "Beast": ["Ber","Tir","Um","Mal","Lum"],
 "Black": ["Thul","Io","Nef"],
@@ -86,7 +83,7 @@ runewords = {
 "Zephyr": ["Ort","Eth"]
 }
 
-def findRuneworts(runes):
+def findRunewords(runes):
     runesLower = [r.lower() for r in runes]
     if verbose:
         print "stash: " + str(runesLower)
@@ -108,7 +105,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     runes = args.runes
     verbose = args.verbose
-    possibleRuneWords = findRuneworts(runes)
+    possibleRuneWords = findRunewords(runes)
     if verbose:
         print "*"*50
     for rw in possibleRuneWords:
