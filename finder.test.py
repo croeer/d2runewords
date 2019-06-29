@@ -10,6 +10,10 @@ class RunewordTest(unittest.TestCase):
         rw = findRuneworts(['um','um','um'])
         self.assertEqual(rw,['dummyUmUmUm'])
 
+    def test_tripleRunesPlusOne(self):
+        rw = findRuneworts(['um','um','um', 'uh'])
+        self.assertEqual(rw,['dummyUmUmUm'])
+
     def test_casing(self):
         rw = findRuneworts(['TIR','SoL','etH'])
         self.assertEqual(rw, ['dummyGross'])
