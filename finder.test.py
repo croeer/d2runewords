@@ -4,15 +4,15 @@ from finder import *
 class RunewordTest(unittest.TestCase):
     def test_doubleRunes(self):
         rw = findRunewords(['sol','um','um'])
-        self.assertEqual(rw, ['Bone'])
+        self.assertEqual(rw, [{'Bone': "['Sol', 'Um', 'Um']"}])
 
     def test_doubleRunesPlusOne(self):
-        rw = findRunewords(['sol','um','um'])
-        self.assertEqual(rw,['Bone'])
+        rw = findRunewords(['sol','um','um','shael'])
+        self.assertEqual(rw, [{'Bone': "['Sol', 'Um', 'Um']"}])
 
     def test_casing(self):
         rw = findRunewords(['NeF','tiR'])
-        self.assertEqual(rw, ['Nadir'])
+        self.assertEqual(rw, [{'Nadir': "['Nef', 'Tir']"}])
 
     def test_singleRune(self):
         rw = findRunewords(['ral'])

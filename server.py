@@ -5,7 +5,7 @@ from finder import *
 # Initialize the Flask application
 app = Flask(__name__)
 
-# curl localhost:5000/api/test
+# curl "http://localhost:5000/api/runewords?runes=um,um,nef,ko,mal,mal,tal,ral,ort"
 
 # route http posts to this method
 @app.route('/api/runewords', methods=['GET'])
@@ -20,7 +20,6 @@ def test():
     response_pickled = jsonpickle.encode(response)
 
     return Response(response=response_pickled, status=200, mimetype="application/json")
-
 
 # start flask app
 

@@ -94,7 +94,9 @@ def findRunewords(runes):
         if verbose:
             print "checking " + str(lettersLower) + ": " + str(result)
         if result:
-            foundWords.append(name)
+            d = {}
+            d[name] = str(runewords[name])
+            foundWords.append( d )
 
     return foundWords
 
@@ -109,4 +111,4 @@ if __name__ == '__main__':
     if verbose:
         print "*"*50
     for rw in possibleRuneWords:
-        print rw + ": " + str(runewords[rw])
+        print rw
